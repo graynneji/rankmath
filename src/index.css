@@ -11,7 +11,8 @@ body {
   justify-content: center;
   max-height: 100vh;
 
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
+
   list-style: 1;
   font-weight: 400;
   /* overflow-x: hidden; */
@@ -35,16 +36,19 @@ body {
   background-color: #fff;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 2rem 1rem;
+  padding: 2rem 2rem;
   margin-bottom: 2rem;
 }
 .logo-name {
   justify-self: center;
+  font-size: 1.86rem;
+  font-weight: 500;
+  letter-spacing: 0.07rem;
 }
-ion-icon {
+/* ion-icon {
   font-size: 1.6rem;
   color: red;
-}
+} */
 .btn-front {
   justify-self: end;
 }
@@ -56,7 +60,7 @@ ion-icon {
   width: 90%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-columns: 4fr 0.3fr 4fr;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
   border-radius: 1.5rem;
   padding: 2rem;
@@ -76,6 +80,13 @@ ion-icon {
 .coin-name {
   justify-self: end;
   grid-column: 3;
+  font-weight: 500;
+  color: #999;
+  font-size: 1.4rem;
+}
+.coin-bitcoin {
+  font-weight: 400;
+  font-size: 1.5rem;
 }
 .btc-icon-con {
   display: grid;
@@ -87,11 +98,16 @@ ion-icon {
   justify-content: center;
 }
 .coin-amount {
-  font-size: 1.5rem;
+  font-size: 2.26rem;
   grid-row: 2;
+  font-weight: 500;
+  letter-spacing: 0.07rem;
 }
 .coin-in-usd {
   grid-row: 3;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #999;
 }
 .value-rate {
   grid-row: 3;
@@ -100,7 +116,9 @@ ion-icon {
   border-radius: 1rem;
   justify-self: end;
   border: none;
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 0.6rem;
+  background-color: #e63946;
+  font-size: 1rem;
 }
 .arrow-down {
   grid-row: 4;
@@ -137,7 +155,7 @@ ion-icon {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 4rem;
   margin-bottom: 2rem;
 }
 .buy-btc {
