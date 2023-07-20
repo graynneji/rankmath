@@ -14,7 +14,11 @@ import {
 } from "recharts";
 import { SiBitcoinsv } from "react-icons/si";
 import { CiMenuKebab } from "react-icons/ci";
-import { IoIosArrowBack } from "react-icons/io";
+import {
+  IoIosArrowBack,
+  IoIosNotifications,
+  IoMdSettings,
+} from "react-icons/io";
 import {
   BiSolidWallet,
   BiSolidCompass,
@@ -77,7 +81,7 @@ const Display = ({ coinName, coinAmount, coin, coinInUsd, valueRate }) => {
         <div className="btc">
           {/* <div className="btc-icon-con"> */}
           <div>
-            <SiBitcoinsv color="#f2a900" size={30} />
+            <SiBitcoinsv color="#f2a900" size={40} />
             {/* <ion-icon className="btc-icon" name="logo-bitcoin"></ion-icon> */}
           </div>
           <p className="coin-bitcoin">{coinName}</p>
@@ -138,8 +142,8 @@ const Chart = () => {
         >
           <defs>
             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#8884d8" stopOpacity={0.2} />
-              <stop offset="95%" stopColor="#8884d8" stopOpacity={0.2} />
+              <stop offset="5%" stopColor="#f2a900" stopOpacity={0.1} />
+              <stop offset="95%" stopColor="#f2a900" stopOpacity={0.1} />
             </linearGradient>
           </defs>
           {/* <XAxis dataKey="month" /> */}
@@ -151,7 +155,7 @@ const Chart = () => {
           <Area
             type="monotone"
             dataKey="price"
-            stroke="#8884d8"
+            stroke="#f2a900"
             fillOpacity={1}
             fill="url(#colorUv)"
             dot={(props) => {
@@ -167,12 +171,12 @@ const Chart = () => {
                       cx={cx}
                       cy={cy}
                       r={radius + 3}
-                      fill="#8884d8"
+                      fill="#f2a900"
                       opacity={0.3}
                     />
 
                     {/* Inner Circle */}
-                    <circle cx={cx} cy={cy} r={radius} fill="#8884d8" />
+                    <circle cx={cx} cy={cy} r={radius} fill="#f2a900" />
                   </>
                 );
               }
@@ -198,11 +202,11 @@ const Purchase = () => {
     <>
       <div className="btc-container">
         <div className="buy-btc">
-          <BiSolidDollarCircle size={30} />
+          <BiSolidDollarCircle color={"#4895ef"} size={40} />
           <span className="buy-details">Buy BTC</span>
         </div>
         <div className="sell-btc">
-          <BiSolidDollarCircle size={30} />
+          <BiSolidDollarCircle color={"#fb8500"} size={40} />
           <span className="sell-details">Sell BTC</span>
         </div>
       </div>
@@ -215,16 +219,16 @@ const Menu = () => {
       <div>
         <div className="menu">
           <div>
-            <BiSolidWallet size={30} />
+            <BiSolidWallet size={25} />
           </div>
           <div>
-            <BiSolidCompass color={"#444"} size={30} />
+            <BiSolidCompass color={"#999"} size={25} />
           </div>
           <div>
-            <ion-icon name="notifications"></ion-icon>
+            <IoIosNotifications color={"#999"} size={25} />
           </div>
           <div>
-            <ion-icon name="settings"></ion-icon>
+            <IoMdSettings color={"#999"} size={25} />
           </div>
         </div>
       </div>

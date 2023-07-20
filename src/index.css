@@ -25,7 +25,7 @@ body {
   margin: 0 auto;
   /* border: 0.1rem solid black; */
   /* z-index: 99999; */
-  background-color: #dde6ed;
+  background-color: #dde6ed42;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
   border-radius: 3rem;
   overflow: hidden;
@@ -63,7 +63,7 @@ body {
   grid-template-columns: 4fr 0.3fr 4fr;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
   border-radius: 1.5rem;
-  padding: 2rem;
+  padding: 1.4rem 2rem;
   align-items: center;
   justify-content: center;
   row-gap: 1.5rem;
@@ -85,8 +85,9 @@ body {
   font-size: 1.4rem;
 }
 .coin-bitcoin {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.5rem;
+  color: #555;
 }
 .btc-icon-con {
   display: grid;
@@ -98,10 +99,12 @@ body {
   justify-content: center;
 }
 .coin-amount {
-  font-size: 2.26rem;
+  font-size: 3.26rem;
   grid-row: 2;
-  font-weight: 500;
-  letter-spacing: 0.07rem;
+  grid-column: 1/-1;
+  font-weight: 400;
+  color: #444;
+  /* letter-spacing: 0.07rem; */
 }
 .coin-in-usd {
   grid-row: 3;
@@ -116,9 +119,10 @@ body {
   border-radius: 1rem;
   justify-self: end;
   border: none;
-  padding: 0.2rem 0.6rem;
+  padding: 0.3rem 1rem;
   background-color: #e63946;
   font-size: 1rem;
+  color: #fff;
 }
 .arrow-down {
   grid-row: 4;
