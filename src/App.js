@@ -13,6 +13,7 @@ import {
   ReferenceDot,
 } from "recharts";
 import { SiBitcoinsv } from "react-icons/si";
+import { SlArrowDown } from "react-icons/sl";
 import { CiMenuKebab } from "react-icons/ci";
 import {
   IoIosArrowBack,
@@ -63,7 +64,7 @@ const Body = () => {
           coinImage=""
           coinAmount="3.529020"
           coin="BTC"
-          coinInUsd="19.153 USD"
+          coinInUsd="19.153"
           valueRate="-2.23%"
         />
       </div>
@@ -81,7 +82,7 @@ const Display = ({ coinName, coinAmount, coin, coinInUsd, valueRate }) => {
         <div className="btc">
           {/* <div className="btc-icon-con"> */}
           <div>
-            <SiBitcoinsv color="#f2a900" size={40} />
+            <SiBitcoinsv color="#f2a900" size={35} />
             {/* <ion-icon className="btc-icon" name="logo-bitcoin"></ion-icon> */}
           </div>
           <p className="coin-bitcoin">{coinName}</p>
@@ -91,18 +92,7 @@ const Display = ({ coinName, coinAmount, coin, coinInUsd, valueRate }) => {
         <p className="coin-in-usd">${coinInUsd} USD</p>
         <button className="value-rate">{valueRate}</button>
         <div className="arrow-down">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 30 20"
-            fill="currentColor"
-            class="w-50 h-50"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
-              clip-rule="evenodd"
-            />
-          </svg>
+          <SlArrowDown />
         </div>
       </div>
     </>
