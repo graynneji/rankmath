@@ -1,5 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
+import React, { useState, useContext } from "react";
+import DropDownContext from "./context/context";
 import {
   LineChart,
   Line,
@@ -13,7 +15,7 @@ import {
   ReferenceDot,
 } from "recharts";
 import { SiBitcoinsv } from "react-icons/si";
-import { SlArrowDown } from "react-icons/sl";
+import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 import { CiMenuKebab } from "react-icons/ci";
 import {
   IoIosArrowBack,
@@ -25,6 +27,7 @@ import {
   BiSolidCompass,
   BiSolidDollarCircle,
 } from "react-icons/bi";
+
 function App() {
   return (
     <>
@@ -56,9 +59,10 @@ const Header = () => {
 };
 
 const Body = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <div>
+      <DropDownContext.Provider value={{ isOpen, setIsOpen }}>
         <Display
           coinName="Bitcoin"
           coinImage=""
@@ -67,15 +71,21 @@ const Body = () => {
           coinInUsd="19.153"
           valueRate="-2.23%"
         />
-      </div>
-      <Duration />
-      <Chart />
-      <Purchase />
+
+        {/* <Duration /> */}
+        <Chart />
+        <Purchase />
+      </DropDownContext.Provider>
     </>
   );
 };
 
 const Display = ({ coinName, coinAmount, coin, coinInUsd, valueRate }) => {
+  const { isOpen, setIsOpen } = useContext(DropDownContext);
+  const dropDown = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
       <div className="card-container">
@@ -91,44 +101,83 @@ const Display = ({ coinName, coinAmount, coin, coinInUsd, valueRate }) => {
         <span className="coin-amount">{coinAmount} BTC</span>
         <p className="coin-in-usd">${coinInUsd} USD</p>
         <button className="value-rate">{valueRate}</button>
-        <div className="arrow-down">
-          <SlArrowDown />
+        <div className="arrow-down" onClick={dropDown}>
+          {isOpen ? (
+            <SlArrowUp color={"#777"} size={15} />
+          ) : (
+            <SlArrowDown color={"#777"} size={15} />
+          )}
         </div>
       </div>
-    </>
-  );
-};
-
-const Duration = () => {
-  return (
-    <>
-      <div className="duration-container">
-        <span>Day</span>
-        <span>Week</span>
-        <span>Month</span>
-        <span>Year</span>
-      </div>
+      {/* drop down */}
+      <ul className={` ${isOpen ? "show-list" : "drop-down-list"}`}>
+        <li>heyyy</li>
+        <li>heyyy</li>
+        <li>heyyy</li>
+        <li>heyyy</li>
+      </ul>
     </>
   );
 };
 
 const Chart = () => {
-  const data = [
-    { month: "Jan", price: 4.895 },
-    { month: "Jan", price: 3.67 },
-    { month: "Jan", price: 5.1825 },
-    { month: "Jan", price: 5.862 },
-    { month: "Jan", price: 6.857 },
-  ];
+  const { isOpen, setIsOpen } = useContext(DropDownContext);
+  const data = {
+    day: [
+      { timePeriod: "01:00", price: 4.54 },
+      { timePeriod: "02:00", price: 3.12 },
+      { timePeriod: "03:00", price: 4.98 },
+      { timePeriod: "04:00", price: 5.4 },
+      { timePeriod: "05:00", price: 6.857 },
+    ],
+    week: [
+      { day: "Mon", price: 5.654 },
+      { day: "Tue", price: 4.647 },
+      { day: "Wed", price: 2.3847 },
+      { day: "Thu", price: 4.3847 },
+      { day: "Fri", price: 5.3847 },
+      { day: "Sat", price: 6.857 },
+    ],
+    month: [
+      { month: "Jan", price: 4.895 },
+      { month: "Feb", price: 3.67 },
+      { month: "Mar", price: 4.1825 },
+      { month: "Apr", price: 5.862 },
+      { month: "May", price: 6.857 },
+    ],
+    year: [
+      { year: "2022", price: 3.67 },
+      { year: "2021", price: 4.1825 },
+      { year: "2020", price: 3.862 },
+      { year: "2019", price: 6.857 },
+    ],
+  };
+  const [calData, setCalData] = useState("week");
 
+  const handleClick = (period) => {
+    setCalData(period);
+  };
+
+  const timePeriods = ["day", "week", "month", "year"];
   return (
     <>
+      <div className={`duration-container ${isOpen && "margin-top"}`}>
+        {timePeriods.map((period) => (
+          <div
+            key={period}
+            className={`btn ${period === calData && "active"}`}
+            onClick={() => handleClick(period)}
+          >
+            {period.charAt(0).toUpperCase() + period.slice(1)}
+          </div>
+        ))}
+      </div>
       <div className="chart-container">
         <AreaChart
           width={350}
           height={200}
-          data={data}
-          margin={{ top: 10, right: 30, left: -20, bottom: 0 }}
+          data={data[calData]}
+          margin={{ top: 10, right: 80, left: -20, bottom: 0 }}
         >
           <defs>
             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
@@ -142,7 +191,9 @@ const Chart = () => {
           <Tooltip />
           <Tooltip cursor={{ stroke: "red", strokeWidth: 2 }} />
           <Legend verticalAlign="top" height={36} />
+
           <Area
+            keys={Math.random()}
             type="monotone"
             dataKey="price"
             stroke="#f2a900"
@@ -173,7 +224,7 @@ const Chart = () => {
               return null;
             }}
           />
-          <ReferenceDot x={4.895} y={6.857} r={6} fill="red" />
+          {/* <ReferenceDot x={4.895} y={6.857} r={6} fill="red" /> */}
           {/* <ReferenceDot x={data[lowestValueIndex].month} y={data[lowestValueIndex].price} r={6} fill="green" /> */}
         </AreaChart>
         {/* <LineChart className="line-chart" width={300} height={200} data={data}>
@@ -191,13 +242,13 @@ const Purchase = () => {
   return (
     <>
       <div className="btc-container">
-        <div className="buy-btc">
+        <div className="buy-sel-btc">
           <BiSolidDollarCircle color={"#4895ef"} size={40} />
-          <span className="buy-details">Buy BTC</span>
+          <span className="buy-sell-details">Buy BTC</span>
         </div>
-        <div className="sell-btc">
+        <div className="buy-sel-btc">
           <BiSolidDollarCircle color={"#fb8500"} size={40} />
-          <span className="sell-details">Sell BTC</span>
+          <span className="buy-sell-details">Sell BTC</span>
         </div>
       </div>
     </>
