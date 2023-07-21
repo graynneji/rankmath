@@ -1,7 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
 import React, { useState, useContext } from "react";
-import DropDownContext from "./context/context";
+import { DropDownProvider } from "./context/dropDownContext";
+import { NavProvider } from "./context/navContext";
 import {
   LineChart,
   Line,
@@ -14,9 +15,13 @@ import {
   Legend,
   ReferenceDot,
 } from "recharts";
-import { SiBitcoinsv } from "react-icons/si";
+import { CgEditFlipH } from "react-icons/cg";
+import { SiBitcoinsv, SiDogecoin, SiCardano, SiLitecoin } from "react-icons/si";
 import { SlArrowDown, SlArrowUp } from "react-icons/sl";
-import { CiMenuKebab } from "react-icons/ci";
+import { CiMenuKebab, CiSquareInfo, CiCircleRemove } from "react-icons/ci";
+import { FaEthereum } from "react-icons/fa";
+import { VscCircleFilled } from "react-icons/vsc";
+import { PiDotsThreeOutlineLight, PiShareDuotone } from "react-icons/pi";
 import {
   IoIosArrowBack,
   IoIosNotifications,
@@ -27,42 +32,77 @@ import {
   BiSolidCompass,
   BiSolidDollarCircle,
 } from "react-icons/bi";
-
+import NavContext from "./context/navContext";
+import DropDownContext from "./context/dropDownContext";
 function App() {
   return (
     <>
-      <div className="container">
-        <Header />
-        <Body />
-        <Menu />
-      </div>
+      <NavProvider>
+        <div className="container">
+          <Header />
+          <Body />
+          <Menu />
+        </div>
+      </NavProvider>
     </>
   );
 }
 
 const Header = () => {
+  const { navMenu, setNavMenu } = useContext(NavContext);
+
+  const handleToggleMenu = () => {
+    setNavMenu(!navMenu);
+  };
   return (
     <>
-      <div>
-        <nav className="nav-bar">
-          <span className="btn-back">
-            <IoIosArrowBack size={20} />
-          </span>
-          <h1 className="logo-name">Bitcoin Wallet</h1>
-          <span className="btn-front">
+      <nav className="nav-bar">
+        <span className="btn-back">
+          <IoIosArrowBack size={20} />
+        </span>
+        <h1 className="logo-name">Bitcoin Wallet</h1>
+        <span className="btn-front" onClick={handleToggleMenu}>
+          {navMenu ? (
+            <PiDotsThreeOutlineLight size={20} />
+          ) : (
             <CiMenuKebab size={20} />
-          </span>
-        </nav>
-      </div>
+          )}
+        </span>
+      </nav>
+      {/* dot icon menu */}
+      {navMenu && (
+        <>
+          <div className="overlay"></div>
+          <div className="mobile-nav">
+            <ul className="mobile-list">
+              <li className="hc-border-bottom">
+                <span>Edit</span>
+                <CgEditFlipH size={20} />
+              </li>
+              <li className="hc-border-bottom">
+                <span>Courier info</span>
+                <CiSquareInfo size={20} />
+              </li>
+              <li className="hc-border-bottom">
+                <span>Share</span>
+                <PiShareDuotone size={20} />
+              </li>
+              <li className="hc-border-bottom">
+                <span>Remove</span>
+                <CiCircleRemove size={20} />
+              </li>
+            </ul>
+          </div>
+        </>
+      )}
     </>
   );
 };
 
 const Body = () => {
-  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <DropDownContext.Provider value={{ isOpen, setIsOpen }}>
+      <DropDownProvider>
         <Display
           coinName="Bitcoin"
           coinImage=""
@@ -75,7 +115,7 @@ const Body = () => {
         {/* <Duration /> */}
         <Chart />
         <Purchase />
-      </DropDownContext.Provider>
+      </DropDownProvider>
     </>
   );
 };
@@ -111,10 +151,34 @@ const Display = ({ coinName, coinAmount, coin, coinInUsd, valueRate }) => {
       </div>
       {/* drop down */}
       <ul className={` ${isOpen ? "show-list" : "drop-down-list"}`}>
-        <li>heyyy</li>
-        <li>heyyy</li>
-        <li>heyyy</li>
-        <li>heyyy</li>
+        <li className="alt-coin">
+          <SiDogecoin color={"#e1b303"} size={15} />
+          <p>Dogecoin</p>
+          <span className="grid-coin" style={{ color: "#52b69a" }}>
+            +2.60%
+          </span>
+        </li>
+        <li className="alt-coin">
+          <FaEthereum color={"#303030"} size={15} />
+          <p>Ethereum</p>
+          <span className="grid-coin" style={{ color: "#52b69a" }}>
+            +0.14%
+          </span>
+        </li>
+        <li className="alt-coin">
+          <SiCardano color={"#2a71d0"} size={15} />
+          <p>Cardano</p>
+          <span className="grid-coin" style={{ color: "#e63946" }}>
+            -4.01%
+          </span>
+        </li>
+        <li className="alt-coin">
+          <SiLitecoin color={"#00aeff"} size={15} />
+          <p>Litecoin</p>
+          <span className="grid-coin" style={{ color: "#52b69a" }}>
+            +0.87%
+          </span>
+        </li>
       </ul>
     </>
   );
@@ -133,7 +197,7 @@ const Chart = () => {
     week: [
       { day: "Mon", price: 5.654 },
       { day: "Tue", price: 4.647 },
-      { day: "Wed", price: 2.3847 },
+      { day: "Wed", price: 3.3847 },
       { day: "Thu", price: 4.3847 },
       { day: "Fri", price: 5.3847 },
       { day: "Sat", price: 6.857 },
@@ -173,6 +237,20 @@ const Chart = () => {
         ))}
       </div>
       <div className="chart-container">
+        <div className="min-max">
+          <div className="min-max-grid">
+            <VscCircleFilled color={"#e63946"} size={12} />
+            <text x={100} y={300} fontSize={16} fill="#777">
+              Lower: $4.895
+            </text>
+          </div>
+          <div className="min-max-grid">
+            <VscCircleFilled color={"#52b69a"} size={12} />
+            <text x={50} y={160} fontSize={16} fill="#777">
+              Higher: $6.857
+            </text>
+          </div>
+        </div>
         <AreaChart
           width={350}
           height={200}
@@ -189,9 +267,12 @@ const Chart = () => {
           {/* <YAxis /> */}
 
           <Tooltip />
-          <Tooltip cursor={{ stroke: "red", strokeWidth: 2 }} />
-          <Legend verticalAlign="top" height={36} />
-
+          {/* <Tooltip cursor={{ stroke: "red", strokeWidth: 2 }} /> */}
+          {/* <Legend verticalAlign="top" height={36} /> */}
+          <circle cx={40} cy={155} r={3.5} fill="#f2a900" />
+          <text x={50} y={160} fontSize={16} fill="#777">
+            1BTC = $5.483
+          </text>
           <Area
             keys={Math.random()}
             type="monotone"
@@ -260,16 +341,16 @@ const Menu = () => {
       <div>
         <div className="menu">
           <div>
-            <BiSolidWallet size={25} />
+            <BiSolidWallet color={"#6c757d"} size={25} />
           </div>
           <div>
-            <BiSolidCompass color={"#999"} size={25} />
+            <BiSolidCompass color={"#adb5bd"} size={25} />
           </div>
           <div>
-            <IoIosNotifications color={"#999"} size={25} />
+            <IoIosNotifications color={"#adb5bd"} size={25} />
           </div>
           <div>
-            <IoMdSettings color={"#999"} size={25} />
+            <IoMdSettings color={"#adb5bd"} size={25} />
           </div>
         </div>
       </div>
