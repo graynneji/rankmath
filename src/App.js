@@ -270,9 +270,9 @@ const Chart = () => {
           {/* <Tooltip cursor={{ stroke: "red", strokeWidth: 2 }} /> */}
           {/* <Legend verticalAlign="top" height={36} /> */}
           <circle cx={40} cy={155} r={3.5} fill="#f2a900" />
-          <text x={50} y={160} fontSize={16} fill="#777">
+          <div x={50} y={160} fontSize={16} fill="#777">
             1BTC = $5.483
-          </text>
+          </div>
           <Area
             keys={Math.random()}
             type="monotone"
