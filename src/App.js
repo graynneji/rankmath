@@ -274,7 +274,6 @@ const Chart = () => {
             1BTC = $5.483
           </div>
           <Area
-            keys={Math.random()}
             type="monotone"
             dataKey="price"
             stroke="#f2a900"
