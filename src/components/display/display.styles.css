@@ -69,10 +69,11 @@
   cursor: pointer;
 }
 .drop-down-list {
-  max-height: 0;
+  max-height: 0rem;
   overflow: hidden;
-  transition: max-height 0.3s ease-out;
+  transition: max-height 1.3s ease-out;
 }
+
 .show-list {
   width: 85%;
   margin: 0 auto;
@@ -93,18 +94,20 @@
   color: #444;
 
   max-height: 20rem;
-  animation: slideDropdown 0.3s forwards ease-in-out;
+  animation: slideDropdown 2s forwards ease-in-out;
 }
 @keyframes slideDropdown {
   from {
     max-height: 0;
     opacity: 0;
+    /* transform: ; */
   }
   to {
     max-height: 20rem;
     opacity: 1;
   }
 }
+
 .alt-coin {
   display: grid;
   grid-template-columns: 1fr 12fr 4fr;
