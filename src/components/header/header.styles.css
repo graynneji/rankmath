@@ -48,7 +48,7 @@
   min-width: 15%;
 
   /* transform: translateX(85%); */
-  transform: translateY(-25%);
+  transform: translateY(-35%);
   margin: 0 auto;
   overflow: hidden;
 }
@@ -85,7 +85,7 @@
     opacity: 0;
   } */
   to {
-    transform: translateX(81%) translateY(-25%);
+    transform: translateX(81%) translateY(-35%);
 
     opacity: 1;
   }
