@@ -4,6 +4,7 @@ import DropDownContext from "../../context/dropDownContext";
 import { SiBitcoinsv, SiDogecoin, SiCardano, SiLitecoin } from "react-icons/si";
 import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 import { FaEthereum } from "react-icons/fa";
+import { teniaryHandler } from "../../App";
 const Display = ({ coinName, coinAmount, coin, coinInUsd, valueRate }) => {
   const { isOpen, setIsOpen } = useContext(DropDownContext);
   const dropDown = () => {
@@ -32,7 +33,13 @@ const Display = ({ coinName, coinAmount, coin, coinInUsd, valueRate }) => {
         </div>
       </div>
       {/* drop down */}
-      <ul className={` ${isOpen ? "show-list" : "drop-down-list"}`}>
+      <ul
+        className={`show-list ${teniaryHandler(
+          isOpen,
+          "slide-down",
+          "slide-up"
+        )}`}
+      >
         <li className="alt-coin">
           <SiDogecoin color={"#e1b303"} size={15} />
           <p>Dogecoin</p>

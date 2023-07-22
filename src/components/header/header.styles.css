@@ -30,35 +30,72 @@
   background-color: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(0.2rem);
   z-index: 2;
+  /* opacity: 0; */
 }
+.fade-in {
+  animation: fadeIn 1s forwards ease-in-out;
+}
+
 .mobile-nav {
   position: absolute;
 
   border-radius: 1rem;
 
-  background-color: #fff;
-  padding: 2rem 2rem;
+  background-color: #e5e5e5;
+  padding: 0.2rem 0 0.2rem 1rem;
   z-index: 9999999;
-  opacity: 1;
+  opacity: 0;
   min-width: 15%;
 
-  transform: translateX(85%);
+  /* transform: translateX(85%); */
+  transform: translateY(-25%);
   margin: 0 auto;
   overflow: hidden;
-  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.fade-in-left {
+  animation: slideInFromLeft 3s forwards ease-in-out;
 }
 .mobile-list {
-  padding: 1rem 1rem;
+  padding: 1rem 0 1rem 1rem;
   text-decoration: none;
   font-size: 1.6rem;
+  font-weight: 500;
+  color: #444;
   display: flex;
   flex-direction: column;
 
   list-style: none;
 }
 .hc-border-bottom {
-  border-bottom: 0.12rem solid #000;
+  border-bottom: 0.13rem solid #999;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
+}
+.hc-border-bottom:last-child {
+  border: none;
+  color: red;
+}
+/* nav animation */
+@keyframes slideInFromLeft {
+  /* from {
+    transform: translateX(-4%);
+
+    opacity: 0;
+  } */
+  to {
+    transform: translateX(81%) translateY(-25%);
+
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

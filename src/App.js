@@ -6,6 +6,9 @@ import Body from "./components/body/body.components";
 
 import { NavProvider } from "./context/navContext";
 
+export const teniaryHandler = (condition, trueValue, falseValue) => {
+  return condition ? trueValue : falseValue;
+};
 function App() {
   return (
     <>

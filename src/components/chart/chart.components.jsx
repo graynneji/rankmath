@@ -3,6 +3,7 @@ import { AreaChart, Tooltip, Area } from "recharts";
 import "./chart.styles.css";
 import DropDownContext from "../../context/dropDownContext";
 import { VscCircleFilled } from "react-icons/vsc";
+import { teniaryHandler } from "../../App";
 const Chart = () => {
   const { isOpen, setIsOpen } = useContext(DropDownContext);
   const data = {
@@ -44,7 +45,9 @@ const Chart = () => {
   const timePeriods = ["day", "week", "month", "year"];
   return (
     <>
-      <div className={`duration-container ${isOpen && "margin-top"}`}>
+      <div
+        className={`duration-container ${teniaryHandler(isOpen, "margin-top")}`}
+      >
         {timePeriods.map((period) => (
           <div
             key={period}

@@ -5,6 +5,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { PiDotsThreeOutlineLight, PiShareDuotone } from "react-icons/pi";
 import { CiMenuKebab, CiSquareInfo, CiCircleRemove } from "react-icons/ci";
 import { CgEditFlipH } from "react-icons/cg";
+import { teniaryHandler } from "../../App";
 const Header = () => {
   const { navMenu, setNavMenu } = useContext(NavContext);
 
@@ -29,8 +30,12 @@ const Header = () => {
       {/* dot icon menu */}
       {navMenu && (
         <>
-          <div className="overlay"></div>
-          <div className="mobile-nav">
+          <div
+            className={`overlay ${teniaryHandler(navMenu, "fade-in")}`}
+          ></div>
+          <div
+            className={`mobile-nav ${teniaryHandler(navMenu, "fade-in-left")}`}
+          >
             <ul className="mobile-list">
               <li className="hc-border-bottom">
                 <span>Edit</span>
