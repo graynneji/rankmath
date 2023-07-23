@@ -22,7 +22,7 @@ const Header = () => {
         <h1 className="logo-name">Bitcoin Wallet</h1>
         <span className="btn-front" onClick={handleToggleMenu}>
           {navMenu ? (
-            <BsThreeDots color="#999" size={20} />
+            <BsThreeDots color="#fff" size={20} />
           ) : (
             <BsThreeDotsVertical color="#999" size={20} />
           )}
@@ -50,7 +50,7 @@ const Header = () => {
                 <span>Share</span>
                 <PiShareDuotone size={20} />
               </li>
-              <li className="hc-border-bottom">
+              <li className="hc-border-bottom" onClick={handleToggleMenu}>
                 <span>Remove</span>
                 <CiCircleRemove size={20} />
               </li>
