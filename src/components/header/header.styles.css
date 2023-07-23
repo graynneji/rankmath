@@ -65,7 +65,7 @@
   padding: 1rem 0 1rem -1rem;
   /* padding: 1rem 1rem; */
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 500;
   color: #444;
   display: flex;
@@ -74,15 +74,15 @@
 }
 .hc-border-bottom {
   border-bottom: 0.13rem solid #999;
-  padding: 1rem;
+  padding: 1.2rem;
   /* display: flex;
   justify-content: space-between; */
   display: grid;
   grid-template-columns: 4fr 1fr 1fr;
   cursor: pointer;
 }
-.p {
-  grid-column: 2/-1;
+.lists {
+  grid-column: 1 / 2;
 }
 .hc-border-bottom:last-child {
   border: none;

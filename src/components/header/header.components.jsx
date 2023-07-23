@@ -39,21 +39,21 @@ const Header = () => {
           >
             <ul className="mobile-list">
               <li className="hc-border-bottom">
-                <span>Edit</span>
+                <span className="lists">Edit</span>
                 <CgEditFlipH style={{ gridColumn: -1 }} size={20} />
               </li>
               <li className="hc-border-bottom">
-                <span>Courier info</span>
+                <div className="lists">Courier info</div>
                 {/* <div className="p"> */}
                 <CiSquareInfo style={{ gridColumn: -1 }} size={20} />
                 {/* </div> */}
               </li>
               <li className="hc-border-bottom">
-                <span style={{ gridColumn: 1 / 2 }}>Share</span>
+                <span className="lists">Share</span>
                 <PiShareDuotone style={{ gridColumn: -1 }} size={20} />
               </li>
               <li className="hc-border-bottom" onClick={handleToggleMenu}>
-                <span>Remove</span>
+                <span className="lists">Remove</span>
                 <CiCircleRemove style={{ gridColumn: -1 }} size={20} />
               </li>
             </ul>
