@@ -74,10 +74,10 @@ const Chart = () => {
           </div>
         </div>
         <AreaChart
-          width={350}
+          width={370}
           height={200}
           data={data[calData]}
-          margin={{ top: 10, right: 80, left: -20, bottom: 0 }}
+          margin={{ top: 10, right: 75, left: -20, bottom: 0 }}
         >
           <defs>
             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">

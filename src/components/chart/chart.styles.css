@@ -27,6 +27,8 @@
 .chart-container {
   width: 85%;
   margin: 0 auto;
+  /* min-width: 27rem;
+  max-width: 32rem; */
   background-color: #fff;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.09);
   border-radius: 1rem;
