@@ -26,9 +26,9 @@ const Display = ({ coinName, coinAmount, coin, coinInUsd, valueRate }) => {
         <button className="value-rate">{valueRate}</button>
         <div className="arrow-down" onClick={dropDown}>
           {isOpen ? (
-            <SlArrowUp color={"#777"} size={15} />
+            <SlArrowUp color={"#777"} size={17} />
           ) : (
-            <SlArrowDown color={"#777"} size={15} />
+            <SlArrowDown color={"#777"} size={17} />
           )}
         </div>
       </div>

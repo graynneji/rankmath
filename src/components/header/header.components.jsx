@@ -2,9 +2,10 @@ import React, { useContext } from "react";
 import NavContext from "../../context/navContext";
 import "./header.styles.css";
 import { IoIosArrowBack } from "react-icons/io";
-import { PiDotsThreeOutlineLight, PiShareDuotone } from "react-icons/pi";
-import { CiMenuKebab, CiSquareInfo, CiCircleRemove } from "react-icons/ci";
+import { PiShareDuotone } from "react-icons/pi";
+import { CiSquareInfo, CiCircleRemove } from "react-icons/ci";
 import { CgEditFlipH } from "react-icons/cg";
+import { BsThreeDotsVertical, BsThreeDots } from "react-icons/bs";
 import { teniaryHandler } from "../../App";
 const Header = () => {
   const { navMenu, setNavMenu } = useContext(NavContext);
@@ -16,14 +17,14 @@ const Header = () => {
     <>
       <nav className="nav-bar">
         <span className="btn-back">
-          <IoIosArrowBack size={20} />
+          <IoIosArrowBack color="#999" size={20} />
         </span>
         <h1 className="logo-name">Bitcoin Wallet</h1>
         <span className="btn-front" onClick={handleToggleMenu}>
           {navMenu ? (
-            <PiDotsThreeOutlineLight size={20} />
+            <BsThreeDots color="#999" size={20} />
           ) : (
-            <CiMenuKebab size={20} />
+            <BsThreeDotsVertical color="#999" size={20} />
           )}
         </span>
       </nav>
