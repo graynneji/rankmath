@@ -17,8 +17,10 @@ body {
   font-weight: 400;
 }
 .container {
-  max-width: 35.5rem;
-  max-height: 91.5rem;
+  min-width: 32rem;
+  max-width: 37rem;
+  /* max-width: 32rem; */
+  /* max-height: 91.5rem; */
   width: 100%;
   margin: 0 auto;
 
