@@ -43,13 +43,14 @@
   position: absolute;
 
   border-radius: 1rem;
-  min-width: 18.94;
+  max-width: 18.94rem;
+  min-width: 10rem;
   background-color: #e5e5e5;
   /* padding: 0.2rem 0 0.2rem 1rem; */
   padding: 2rem 2rem;
   z-index: 9999999;
   opacity: 0;
-  min-width: 15%;
+  /* min-width: 15%; */
 
   /* transform: translateX(85%); */
   /* transform: translateY(-10%); */
