@@ -12,7 +12,7 @@ const Body = () => {
           coinAmount="3.529020"
           coin="BTC"
           coinInUsd="19.153"
-          valueRate="-2.23%"
+          valueRate="&#8209;&nbsp;2.23%"
         />
 
         {/* <Duration /> */}

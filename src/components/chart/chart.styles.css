@@ -4,12 +4,13 @@
   display: flex;
   /* grid-template-columns: 1fr 1fr 1fr 1fr; */
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
   padding: 0 0.3rem;
   font-size: 1.3rem;
   color: #777;
   font-weight: 400;
 }
+
 .margin-top {
   margin-top: 2rem;
 }
@@ -29,8 +30,9 @@
   margin: 0 auto;
   /* min-width: 27rem;
   max-width: 32rem; */
+
   background-color: #fff;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.09);
+  box-shadow: 0 0 4.5rem rgba(0, 0, 0, 0.09);
   border-radius: 1rem;
   overflow: hidden;
   margin-bottom: 2rem;
@@ -41,10 +43,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   font-size: 1.2rem;
+  gap: 4rem;
 }
 .min-max-grid {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
+  color: #999;
 }

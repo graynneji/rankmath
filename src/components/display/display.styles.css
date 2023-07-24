@@ -3,13 +3,13 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.09);
+  box-shadow: 0 0 4.5rem rgba(0, 0, 0, 0.09);
   border-radius: 1rem;
-  padding: 1.4rem 2rem;
+  padding: 2rem 2rem;
   align-items: center;
   justify-content: center;
-  row-gap: 1.5rem;
-  margin-bottom: 2rem;
+  /* row-gap: 1.5rem; */
+  margin-bottom: 1.9rem;
   background-color: #fff;
 
   transition: margin-bottom 0.4s ease-in-out;
@@ -23,46 +23,51 @@
 }
 .coin-bitcoin {
   font-weight: 500;
-  font-size: 1.5rem;
-  color: #555;
+  font-size: 1.284rem;
+  color: #4c5968;
 }
 .coin-name {
   justify-self: end;
   grid-column: 3;
   font-weight: 500;
-  color: #999;
-  font-size: 1.4rem;
+  color: #aeb8c4;
+  font-size: 1.284rem;
 }
 .coin-amount {
-  font-size: 3.26rem;
+  font-size: 3rem;
   grid-row: 2;
   grid-column: 1/-1;
-  font-weight: 400;
-  color: #555;
+  font-weight: 600;
+  color: #4c5968;
 }
 .coin-in-usd {
   grid-row: 3;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 500;
-  color: #999;
+  color: #aeb8c4;
+  grid-column: 1/3;
 }
 .value-rate {
   grid-row: 3;
   grid-column: 3;
   width: min-content;
-  border-radius: 1rem;
+  border-radius: 2rem;
   justify-self: end;
   border: none;
-  padding: 0.3rem 1rem;
-  background-color: #e63946;
-  font-size: 1rem;
-  color: #fff;
+  padding: 0.57rem 1rem;
+  background-color: #ee225d;
+  font-size: 1.284rem;
+
+  color: #ffffff;
 }
 .arrow-down {
   grid-row: 4;
   grid-column: 2;
-
+  /* display: flex; */
+  justify-content: stretch;
+  /* align-items: stretch; */
   justify-self: center;
+  align-self: center;
 
   width: 2rem;
   height: 2rem;
@@ -81,7 +86,7 @@
   background-color: #ffffff60;
   padding: 1rem;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.09);
-  margin-top: -2rem;
+  margin-top: -1.9rem;
 
   z-index: 1;
   font-size: 1.2rem;

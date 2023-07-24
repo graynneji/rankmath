@@ -16,7 +16,7 @@ const Display = ({ coinName, coinAmount, coin, coinInUsd, valueRate }) => {
       <div className="card-container">
         <div className="btc">
           <div>
-            <SiBitcoinsv color="#f2a900" size={35} />
+            <SiBitcoinsv color="#FFB032" size={35} />
           </div>
           <p className="coin-bitcoin">{coinName}</p>
         </div>

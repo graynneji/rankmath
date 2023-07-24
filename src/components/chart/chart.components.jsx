@@ -62,45 +62,55 @@ const Chart = () => {
         <div className="min-max">
           <div className="min-max-grid">
             <VscCircleFilled color={"#e63946"} size={12} />
-            <text x={100} y={300} fontSize={16} fill="#777">
+            <text x={100} y={300} fontSize={16} fill="#999">
               Lower: $4.895
             </text>
           </div>
           <div className="min-max-grid">
             <VscCircleFilled color={"#52b69a"} size={12} />
-            <text x={50} y={160} fontSize={16} fill="#777">
+            <text x={50} y={160} fontSize={16} fill="#999">
               Higher: $6.857
             </text>
           </div>
         </div>
         <AreaChart
           width={370}
-          height={200}
+          height={120}
           data={data[calData]}
           margin={{ top: 10, right: 75, left: -20, bottom: 0 }}
         >
           <defs>
-            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#f2a900" stopOpacity={0.1} />
-              <stop offset="95%" stopColor="#f2a900" stopOpacity={0.1} />
+            <linearGradient id="lineGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#f2a900" stopOpacity={0.3} />
+              <stop offset="95%" stopColor="#f2a900" stopOpacity={1} />
+            </linearGradient>
+
+            {/* gradien for circle */}
+            <linearGradient id="circleGradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#f2a900" stopOpacity={1} />
+              <stop offset="95%" stopColor="#f2a900" stopOpacity={0.4} />
             </linearGradient>
           </defs>
-          {/* <XAxis dataKey="month" /> */}
-          {/* <YAxis /> */}
 
           <Tooltip />
           {/* <Tooltip cursor={{ stroke: "red", strokeWidth: 2 }} /> */}
           {/* <Legend verticalAlign="top" height={36} /> */}
-          <circle cx={40} cy={155} r={3.5} fill="#f2a900" />
-          <text x={50} y={160} fontSize={16} fill="#777">
+          {/* Outer cirlce */}
+          <circle cx={40} cy={93} r={6.5} fill={"#f2a900"} opacity={0.3} />
+          {/* Inner circle */}
+          <circle cx={40} cy={93} r={3.5} fill="url(#circleGradient)" />
+
+          <text x={50} y={97} fontWeight={600} fontSize={14} fill="#999">
             1BTC = $5.483
           </text>
+
           <Area
             type="monotone"
             dataKey="price"
-            stroke="#f2a900"
-            fillOpacity={1}
-            fill="url(#colorUv)"
+            stroke="url(#lineGradient)"
+            strokeWidth={3}
+            fillOpacity={0.1}
+            fill="#f2a900"
             dot={(props) => {
               const { cx, cy, payload } = props;
               const priceValue = payload.price;
@@ -119,7 +129,12 @@ const Chart = () => {
                     />
 
                     {/* Inner Circle */}
-                    <circle cx={cx} cy={cy} r={radius} fill="#f2a900" />
+                    <circle
+                      cx={cx}
+                      cy={cy}
+                      r={radius}
+                      fill="url(#circleGradient)"
+                    />
                   </>
                 );
               }

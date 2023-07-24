@@ -5,6 +5,7 @@
   padding: 2rem 2rem;
   margin-bottom: 2rem;
   position: relative;
+  /* box-shadow: 0 0 4.5rem rgba(0, 0, 0, 0.09); */
 }
 .btn-back {
   width: 2rem;
@@ -13,10 +14,10 @@
 }
 .logo-name {
   justify-self: center;
-  font-size: 2.5rem;
+  font-size: 2.6rem;
   /* font-size: 1.7rem; */
   font-weight: 500;
-  color: #555;
+  color: #4c5968;
   /* letter-spacing: 0.07rem; */
 }
 .btn-front {

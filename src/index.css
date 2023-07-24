@@ -11,7 +11,7 @@ body {
   justify-content: center;
   max-height: 100vh;
 
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
 
   list-style: 1;
   font-weight: 400;
@@ -24,7 +24,8 @@ body {
   width: 100%;
   margin: 0 auto;
 
-  background-color: #dde6ed42;
+  /* background-color: #dde6ed42; */
+  background-color: #f0f3f7;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.09);
   border-radius: 3rem;
   overflow: hidden;
