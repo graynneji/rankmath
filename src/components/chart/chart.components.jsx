@@ -119,9 +119,9 @@ const Chart = () => {
               dataKey="price"
               stroke="url(#lineGradient)"
               strokeWidth={3}
-              fillOpacity={0.1}
-              // fill="#FFF7EE"
-              fill="url(#lineGradient)"
+              // fillOpacity={0.1}
+              fill="#FFF7EE"
+              // fill="url(#lineGradient)"
               dot={(props) => {
                 const { cx, cy, payload } = props;
                 const priceValue = payload.price;
