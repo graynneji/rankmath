@@ -138,6 +138,7 @@
   display: grid;
   grid-template-columns: 1fr 12fr 4fr;
   gap: 1rem;
+  padding: 0 1.2rem 0 1.2rem;
 }
 .grid-coin {
   justify-self: end;
