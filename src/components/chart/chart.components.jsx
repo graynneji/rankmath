@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+
 import { AreaChart, Tooltip, Area, ResponsiveContainer } from "recharts";
 import "./chart.styles.css";
 import DropDownContext from "../../context/dropDownContext";
@@ -74,12 +75,12 @@ const Chart = () => {
             </text>
           </div>
         </div>
-        <ResponsiveContainer width="107%" height="57%">
+        <ResponsiveContainer width="115%" height={130}>
           <AreaChart
-            // width={370}
-            // height={120}
+            width={370}
+            height={120}
             data={data[calData]}
-            margin={{ top: 10, right: 55, left: -20, bottom: 0 }}
+            margin={{ top: 10, right: 75, left: -20, bottom: 0 }}
           >
             <defs>
               <linearGradient id="lineGradient" x1="0" y1="0" x2="0" y2="1">
