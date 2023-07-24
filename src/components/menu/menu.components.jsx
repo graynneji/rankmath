@@ -7,16 +7,16 @@ const Menu = () => {
       <div>
         <div className="menu">
           <div>
-            <BiSolidWallet color={"#6c757d"} size={25} />
+            <BiSolidWallet color={"#4C5968"} size={25} />
           </div>
           <div>
-            <BiSolidCompass color={"#adb5bd"} size={25} />
+            <BiSolidCompass color={"#AEB8C4"} size={25} />
           </div>
           <div>
-            <IoIosNotifications color={"#adb5bd"} size={25} />
+            <IoIosNotifications color={"#AEB8C4"} size={25} />
           </div>
           <div>
-            <IoMdSettings color={"#adb5bd"} size={25} />
+            <IoMdSettings color={"#AEB8C4"} size={25} />
           </div>
         </div>
       </div>

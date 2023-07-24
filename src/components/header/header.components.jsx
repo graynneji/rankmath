@@ -17,14 +17,14 @@ const Header = () => {
     <>
       <nav className="nav-bar">
         <span className="btn-back">
-          <IoIosArrowBack color="#999" size={20} />
+          <IoIosArrowBack color="#AEB8C4" size={20} />
         </span>
         <h1 className="logo-name">Bitcoin Wallet</h1>
         <span className="btn-front" onClick={handleToggleMenu}>
           {navMenu ? (
             <BsThreeDots color="#fff" size={20} />
           ) : (
-            <BsThreeDotsVertical color="#999" size={20} />
+            <BsThreeDotsVertical color="#AEB8C4" size={20} />
           )}
         </span>
       </nav>
