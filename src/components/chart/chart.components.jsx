@@ -75,12 +75,12 @@ const Chart = () => {
             </text>
           </div>
         </div>
-        <ResponsiveContainer width="115%" height={130}>
+        <ResponsiveContainer width="107%" height={130}>
           <AreaChart
             width={370}
             height={120}
             data={data[calData]}
-            margin={{ top: 10, right: 75, left: -20, bottom: 0 }}
+            margin={{ top: 10, right: 55, left: -20, bottom: 0 }}
           >
             <defs>
               <linearGradient id="lineGradient" x1="0" y1="0" x2="0" y2="1">
@@ -100,13 +100,13 @@ const Chart = () => {
             {/* <Tooltip cursor={{ stroke: "red", strokeWidth: 2 }} /> */}
             {/* <Legend verticalAlign="top" height={36} /> */}
             {/* Outer cirlce */}
-            <circle cx={25} cy={97} r={5.2} fill={"#FF8F17"} opacity={0.3} />
+            <circle cx={25} cy={110} r={5.2} fill={"#FF8F17"} opacity={0.3} />
             {/* Inner circle */}
-            <circle cx={25} cy={97} r={3.5} fill="url(#circleGradient)" />
+            <circle cx={25} cy={110} r={3.5} fill="url(#circleGradient)" />
 
             <text
               x={40}
-              y={101}
+              y={114}
               fontWeight={600}
               fontSize={12.84}
               fill="#4C5968"
