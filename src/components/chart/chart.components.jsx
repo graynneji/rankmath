@@ -85,14 +85,14 @@ const Chart = () => {
             <defs>
               <linearGradient id="lineGradient" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%" stopColor="#FFC843" stopOpacity={0.5} />
-                {/* <stop offset="5%" stopColor="#FF8F17" stopOpacity={0.3} /> */}
-                <stop offset="65%" stopColor="#FF8F17" stopOpacity={1} />
+                {/* <stop offset="5%" stopColor="#ff9605" stopOpacity={0.3} /> */}
+                <stop offset="65%" stopColor="#ff9605" stopOpacity={1} />
               </linearGradient>
 
               {/* gradien for circle */}
               <linearGradient id="circleGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#FF921A" stopOpacity={1} />
-                <stop offset="95%" stopColor="#FF921A" stopOpacity={0.3} />
+                <stop offset="5%" stopColor="#ff9605" stopOpacity={1} />
+                <stop offset="95%" stopColor="#ff9605" stopOpacity={0.3} />
               </linearGradient>
             </defs>
 
@@ -100,7 +100,7 @@ const Chart = () => {
             {/* <Tooltip cursor={{ stroke: "red", strokeWidth: 2 }} /> */}
             {/* <Legend verticalAlign="top" height={36} /> */}
             {/* Outer cirlce */}
-            <circle cx={25} cy={110} r={5.2} fill={"#FF8F17"} opacity={0.3} />
+            <circle cx={25} cy={110} r={5.2} fill={"#ff9605"} opacity={0.3} />
             {/* Inner circle */}
             <circle cx={25} cy={110} r={3.5} fill="url(#circleGradient)" />
 
@@ -135,7 +135,7 @@ const Chart = () => {
                         cx={cx}
                         cy={cy}
                         r={radius + 3}
-                        fill="#FF8F17"
+                        fill="#ff9605"
                         opacity={0.2}
                       />
 
