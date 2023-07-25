@@ -64,13 +64,13 @@ const Chart = () => {
         <div className="min-max">
           <div className="min-max-grid">
             <VscCircleFilled color={"#EF2755"} size={12} />
-            <text x={100} y={300} fontSize={12} fill="#B5B7B8">
+            <text x={100} y={300} fontSize={12} fill="#96a4be">
               Lower: $4.895
             </text>
           </div>
           <div className="min-max-grid">
             <VscCircleFilled color={"#1EBF6F"} size={12} />
-            <text x={50} y={160} fontSize={12} fill="#B5B7B8">
+            <text x={50} y={160} fontSize={12} fill="#96a4be">
               Higher: $6.857
             </text>
           </div>
@@ -109,7 +109,7 @@ const Chart = () => {
               y={114}
               fontWeight={600}
               fontSize={12.84}
-              fill="#4C5968"
+              fill="#4d5272"
             >
               1BTC = $5.483
             </text>

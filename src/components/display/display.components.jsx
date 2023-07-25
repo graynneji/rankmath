@@ -16,7 +16,7 @@ const Display = ({ coinName, coinAmount, coin, coinInUsd, valueRate }) => {
       <div className="card-container">
         <div className="btc">
           <div>
-            <SiBitcoinsv color="#FFB032" size={35} />
+            <SiBitcoinsv color="#FF9605" size={35} />
           </div>
           <p className="coin-bitcoin">{coinName}</p>
         </div>
@@ -26,9 +26,9 @@ const Display = ({ coinName, coinAmount, coin, coinInUsd, valueRate }) => {
         <button className="value-rate">{valueRate}</button>
         <div className="arrow-down" onClick={dropDown}>
           {isOpen ? (
-            <SlArrowUp color={"#777"} size={17} />
+            <SlArrowUp color={"#96a4be"} size={17} />
           ) : (
-            <SlArrowDown color={"#777"} size={17} />
+            <SlArrowDown color={"#96a4be"} size={17} />
           )}
         </div>
       </div>
