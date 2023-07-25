@@ -119,7 +119,7 @@ const Chart = () => {
               dataKey="price"
               stroke="url(#lineGradient)"
               strokeWidth={3}
-              fillOpacity={0.3}
+              fillOpacity={0.15}
               fill="#FFF7EE"
               // fill="url(#lineGradient)"
               dot={(props) => {
