@@ -84,7 +84,7 @@ const Chart = () => {
           >
             <defs>
               <linearGradient id="lineGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#FFC843" stopOpacity={0.5} />
+                <stop offset="5%" stopColor="#ff9605" stopOpacity={0.5} />
                 {/* <stop offset="5%" stopColor="#ff9605" stopOpacity={0.3} /> */}
                 <stop offset="65%" stopColor="#ff9605" stopOpacity={1} />
               </linearGradient>
@@ -119,8 +119,8 @@ const Chart = () => {
               dataKey="price"
               stroke="url(#lineGradient)"
               strokeWidth={3}
-              fillOpacity={0.15}
-              fill="#FFF7EE"
+              fillOpacity={0.1}
+              fill="url(#lineGradient)"
               // fill="url(#lineGradient)"
               dot={(props) => {
                 const { cx, cy, payload } = props;
